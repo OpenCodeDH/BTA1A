@@ -1,2 +1,4 @@
-    user: "minhdaide",
-    pass: "123456"
+{  
+    "user": "minhdaide",
+    "password": "123456"
+}

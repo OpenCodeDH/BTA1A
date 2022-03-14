@@ -1,23 +1,44 @@
 var http = require('http');
-var url = require('url');
 var fs = require('fs');
+var server = http.createServer(function(request, response){
+  // console.log(request.data);
+  if(request.url == '/index.html') {
+    
+    response.writeHead(200, {
+        "Context-type" : "text/html"
+    })
 
+    fs.createReadStream('./index.html').pipe(response);
+  } else if (request.url == '/new_demo') {
+    // console.log(request);
+    request.on('data', function (chunk) {
+      let data = '' + chunk
+      var check = JSON.parse('{"' + decodeURI(data).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
+      
+      var user = fs.readFileSync('user.txt');
+      
+      var acc = JSON.parse(user);
+      if((check.user == acc.user) && (check.password == acc.password)){
+        console.log('dang nhap thanh cong');
+      
+      } else{
+        console.log('tai khoan hoac mat khau sai');
+      }
+      
+    });
 
-http.createServer(function (req, res) {
-  var q = url.parse(req.url, true);
-  var filename = "." + q.pathname;
-  fs.readFile(filename, function(err, data) {
-    if (err) {
-      res.writeHead(404, {'Content-Type': 'text/html'});
-      return res.end("404 Not Found");
-    } 
-    res.writeHead(200, {'Content-Type': 'text/html'});
- 
-    res.write(data);
-    return res.end();
-  });
-}).listen(3000);
+    response.end();
+  } else {
 
+    response.writeHead(404, {
+        "Context-type" : "text/plain"
+    })
+    response.write('404 not found' + request.url);
+    response.end();
+  }
 
-  
-  
+})
+
+server.listen(3000, function(){
+    console.log('Connected Successfull!')
+})
