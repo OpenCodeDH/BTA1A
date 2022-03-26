@@ -1,0 +1,17 @@
+[
+ {
+   "id": 1,
+   "user_id":  1,
+   "content": "Hello Node js"
+ },
+ {
+   "id": 2,
+   "user_id":  3,
+   "content": "Hello Node js nha"
+ },
+ {
+   "id": 3,
+   "user_id":  2,
+   "content": "Hello Node js thank you"
+ }
+]
