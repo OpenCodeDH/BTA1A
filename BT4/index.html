@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <title>Title</title>
+</head>
+
+<body>
+  <div id="viewport">
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <header>
+        <a href="#">My App</a>
+      </header>
+      <ul class="nav">
+        <li>
+          <a href="/">
+            <i class="zmdi zmdi-view-dashboard"></i> Dashboard
+          </a>
+        </li>
+        <li>
+          <a class="table" href="/table">
+            <i class="zmdi zmdi-link"></i> Table
+          </a>
+        </li>
+        <li>
+          <a class="billing" href="/billing">
+            <i class="zmdi zmdi-widgets"></i> Billing
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- Content -->
+    <div id="content">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page"></li>
+        </ol>
+      </nav>
+      <div class="container-fluid content-div"></div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.table').on('click', function (e) {
+        $.ajax({
+                url: "http://localhost:3000/table",
+                success: function (data, status, xhr) {
+                    $('.content-div').innerHtml(data)                        
+                    
+                },
+                error: function (jqXhr, textStatus, errorMessage) {
+                    console.log("errors find users no: ", errorMessage);
+                }
+            })
+      })
+      $('.billing').on('click', function (e) {
+        $.ajax({
+                url: "http://localhost:3000/billing",
+                success: function (data, status, xhr) {
+                    $('.content-div').innerHtml(data)                        
+                    
+                },
+                error: function (jqXhr, textStatus, errorMessage) {
+                    console.log("errors find users no: ", errorMessage);
+                }
+            })
+      })
+        
+    });
+</script>
+</body>
+
+</html>
