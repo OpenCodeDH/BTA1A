@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./layouts/head')%>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+      </style>
+  </head>
+  <body>
+    <%- include('./layouts/header')%>
+    <main>
+      <h1> ABC<%= title %></h1>
+      <p>Welcome to <%= title %></p>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Date</th>
+        </tr>
+        <% users.forEach(function(user){ %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.age %></td>
+            <td><%= user.date %></td>
+          </tr>
+        <% }); %>
+        
+      </table>
+    </main>
+    <%- include('./layouts/footer')%>
+  </body>
+</html>
