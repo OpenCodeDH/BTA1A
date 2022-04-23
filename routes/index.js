@@ -1,28 +1,39 @@
 var express = require('express');
 const req = require('express/lib/request');
 var router = express.Router();
-var fs = require('fs')
-/* GET home page. */
-var idol = JSON.parse(fs.readFileSync('./idol.json'))
-router.get('/', function(req, res) {
-  res.render('index', { idols: idol})
+const Idol = require('../models/idol')
+router.get('/', async function(req, res, next) {
+  const idols = await Idol.find({});
+  res.render('index',{ idols: idols });
 });
-idol.forEach(e => {
-  router.get('/'+e.link, function(req, res) {
-    var x = e
-    
-    res.render('show',{result: x})
-  })
-});
-router.post('/gioitinh', function (req, res) {
-  var temp = req.body.gender
-  var x =[]
-  idol.forEach(e => {
-    if(e.gender == temp){
-      x.push(e)
-    }
+async function runLink(){
+  const temp = await Idol.find({});
+
+  temp.forEach(e => {
+    router.get('/'+e.link, function(req, res) {
+      var x = e
+      
+      res.render('show',{result: x})
+    })
   });
-  res.render('index', {idols: x})
-})
+}
+runLink();
+
+async function fillGender(){
+  const idols = await Idol.find({});
+  router.post('/gioitinh', function (req, res) {
+  
+    var temp = req.body.gender
+    var x =[]
+    console.log(idols);
+    idols.forEach(e => {
+      if(e.gender == temp){
+        x.push(e)
+      }
+    });
+    res.render('index', {idols: x})
+  })
+}
+fillGender()
 
 module.exports = router;

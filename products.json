@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Dien thoai",
+        "price": 300000,
+        "imagePath": "URL",
+        "calegoryName": "calogoty 1",
+        "brandName": "Xiaomi",
+        "cpu": "CPU 1",
+        "screenSize": "18",
+        "ram": 16,
+        "maxRAM": 64,
+        "gpu": "GPU",
+        "graphicCard": "snap dragon",
+        "os": "Android"
+    },
+    {
+        "name": "Dien thoai 1",
+        "price": 400000,
+        "imagePath": "URL",
+        "calegoryName": "calogoty 2",
+        "brandName": "Xiaomi",
+        "cpu": "CPU 2",
+        "screenSize": "18",
+        "ram": 16,
+        "maxRAM": 64,
+        "gpu": "GPU",
+        "graphicCard": "snap dragon",
+        "os": "Android"
+    },
+    {
+        "name": "Dien thoai 2",
+        "price": 100000,
+        "imagePath": "URL",
+        "calegoryName": "calogoty 3",
+        "brandName": "Xiaomi",
+        "cpu": "CPU 3",
+        "screenSize": "18",
+        "ram": 16,
+        "maxRAM": 64,
+        "gpu": "GPU",
+        "graphicCard": "snap dragon",
+        "os": "Android"
+    }
+]
