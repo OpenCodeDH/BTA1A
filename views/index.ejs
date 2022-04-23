@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Index</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+        <% var index = 0 %>
+        <% var dem = idols.length % 3 %>
+        <% for (let i = 0; i < idols.length; i += index) { %>
+          <div class="container">
+              <% if(idols.length <3){ %>
+                <% var temp =3 %>
+              <% }else { %>
+                <% temp = 0 %>
+             <% } %>
+              <% for (let j = i; j < idols.length-dem+i+temp; j++) { %>
+                <% if(idols[j]){ %>
+                    <div class="card">
+                    <img class="card-img-top" src="<%= idols[j].img %>">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= idols[j].name %></h5>
+                            <p class="card-text">Giới tính: <%= idols[j].gender %></p>
+                            <p class="card-text">Ngày sinh: <%= idols[j].date %></p>
+                            <button><a href="/<%= idols[j].link %>">Xem Thêm</a></button>
+                        </div>
+                </div>
+                <% } %>
+                <% index = j+1 %>
+          <% } %>
+        </div>
+      <% } %>
+    
+    <form class="div-form" method="post" action="/gioitinh">
+      <div class="form-group form-submit">
+        <label for="exampleFormControlSelect1">Lọc theo giới tính</label>
+        <select name="gender" class="form-control" id="exampleFormControlSelect1">
+          <option>Nam</option>
+          <option>Nữ</option>
+        </select>
+        <button type="submit">Lọc</button>
+      </div>
+      
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>\
+  </body>
+</html>

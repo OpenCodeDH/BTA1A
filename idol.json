@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Trần Công Minh",
+        "gender": "Nam",
+        "date": "18/02/2002",
+        "link": "trancongminh",
+        "img": "/images/minh.jpg",
+        "qq": "Nam Định",
+        "major": "Sinh viên",
+        "love": "Độc thân",
+        "link_love": "#"
+    },
+    {
+        "id": 2,
+        "name": "Nguyễn Tiến Tùng",
+        "gender": "Nữ",
+        "date": "19/02/2002",
+        "link": "nguyentientung",
+        "img": "/images/tung.jpg",
+        "qq": "Nam Định",
+        "major": "Sinh viên",
+        "love": "Hữu",
+        "link_love": "trinhnhathuu"
+    },
+    {
+        "id": 3,
+        "name": "Trình Nhật Hữu",
+        "gender": "Nam",
+        "date": "20/02/2002",
+        "link": "trinhnhathuu",
+        "img": "/images/huu.jpg",
+        "qq": "Nam Định",
+        "major": "Sinh viên",
+        "love": "Tùng",
+        "link_love": "nguyentientung"
+    },
+    {
+        "id": 4,
+        "name": "Trần Doãn Huy",
+        "gender": "Nam",
+        "date": "21/02/2002",
+        "link": "trandoanhuy",
+        "img": "/images/huy.png",
+        "qq": "Nam Định",
+        "major": "Sinh viên",
+        "love": "Độc thân",
+        "link_love": "#"
+    },
+    {
+        "id": 5,
+        "name": "Nguyễn Văn Dũng",
+        "gender": "Nam",
+        "date": "22/02/2002",
+        "link": "nguyenvandung",
+        "img": "/images/dung.jpg",
+        "qq": "Nam Định",
+        "major": "Sinh viên",
+        "love": "Độc thân",
+        "link_love": "#"
+    }
+]
